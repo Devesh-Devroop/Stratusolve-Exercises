@@ -1,43 +1,26 @@
 <?php
 //Working addAll()
-// function addAll(array $numbers){
-// $sum = 0;
+function addAll(array $numbers){
+$sum = 0;
 
-// for($i = 0; $i < count($numbers);$i++){
-//     $sum = (($numbers[$i]) * ($i+1)) + $sum;
-//     //array_splice($numbers,0);
-//     //echo var_dump($numbers);
-//     }echo $sum;
+for($i = 0; $i < count($numbers);$i++){
+    $sum = (($numbers[$i]) * ($i+1)) + $sum;
+
+    }echo "The sum of all the iterations is: ".' '.$sum."<br>";
+    foreach($numbers as $key=>$val){
+        unset($numbers[$key]);
+    }
+    echo "The size of the input array is: "." ".count($numbers);
 
 
 
-// }
+}
 
-// $test = array(1,2,3,4);
-// addAll($test);
+$test = array(1,2,3,4,9);
+addAll($test);
 //////////////////////////////
-// Second part//
-//Works perfect
-// function addAll(array $numbers){
-//     //$numbers = array(1,1,1,1,1);
-//     $empty = array();
-//     $sum = 0;
-//     for($i = 0; $i<count($numbers) || count($numbers) > 0;$i++){
-//         $sum = array_sum($numbers) + $sum;
-        
-//         echo "The sum of the array is :".' '.$sum.'<br>';
-//         if(count($numbers) > 0){
-//             array_shift($numbers);
-//             echo "Count is: ".' '.count($numbers).'<br>';
-//         }
-        
 
-//     }echo "The sum of the array is :".' '.$sum.'<br>';
-// }    
-// $numbers = array(1,2,3,4);
-// addAll($numbers);   
-
-///////////////////////////////////////
+/////////////////////////////////////// Below is the correct one for iterative.
 
 function addAll($numbers){
     $total = 0;

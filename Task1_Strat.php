@@ -12,7 +12,7 @@ for($i = 0; $i < count($numbers);$i++){
     }
     echo "The size of the input array is: "." ".count($numbers);
 
-
+ 
 
 }
 

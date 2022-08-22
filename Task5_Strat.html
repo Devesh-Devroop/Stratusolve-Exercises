@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Page Title</title>
+               
+
+    </head>
+    <body>
+        <form id="form" action="Task5_php_Strat.php" method="POST">
+            <label>Enter a number for your Fib sequence:  </label><br>
+            <!-- <label>Username: </label><br>
+            <input name ="username" type="text"><br>
+            <label>Password:</label><br>
+            <input name="password" type="password"><br> -->
+            <input id="Number" type="text">
+            <button type="submit">Submit</button>
+            <h3>Result</h3>
+            <p id="result"></p>
+        </form>
+        
+
+        <script>
+            //const form = document.getElementById('form')
+
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+
+                //const test = new FormData(form);
+                const dr = document.getElementById('Number').value
+                fetch('Task5_php_Strat.php'/*'http://httpbin.org/post'*/,{
+                    method:"POST",
+                    header: {"Content-Type": "application/json"},
+                    body: JSON.stringify({"input":dr})
+                })
+                .then(res =>res.text())
+                // .then(data=> console.log(data))
+                .then(data=> document.getElementById("result").innerHTML = data)
+                .catch(err=>console.log(err));
+            })
+            
+
+                
+            
+            
+        
+        
+        </script>
+        
+
+    </body>
+</html>
